@@ -15,22 +15,7 @@ function gup( name ){
     else    return results[1];
     }
 
-function sessionConnectedHandler (event) {
-    session.publish( publisher );
-    subscribeToStreams(event.streams);
-}
-function subscribeToStreams(streams) {
-    for (var i = 0; i < streams.length; i++) {
-        var stream = streams[i];
-        if (stream.connection.connectionId
-            != session.connection.connectionId) {
-            session.subscribe(stream);
-        }
-    }
-}
-function streamCreatedHandler(event) {
-    subscribeToStreams(event.streams);
-}
+
 
 var chatID = gup('id');
 var session;
@@ -44,7 +29,8 @@ query.get(chatID, {
         // sessionId = chat.get('sessionId');
 				sessionId = '1_MX40NDY2MjY2Mn5-U2F0IEZlYiAyMiAxMjoyNjowOSBQU1QgMjAxNH4wLjMzNDMzOTA4fg'
 				console.log(sessionId);
-        session = TB.initSession(sessionId);
+        
+				session = TB.initSession(sessionId);
 
         session.connect(apiKey, token);
 
@@ -62,3 +48,20 @@ query.get(chatID, {
         // error is a Parse.Error with an error code and description.
     }
 });
+
+function sessionConnectedHandler (event) {
+    session.publish( publisher );
+    subscribeToStreams(event.streams);
+}
+function subscribeToStreams(streams) {
+    for (var i = 0; i < streams.length; i++) {
+        var stream = streams[i];
+        if (stream.connection.connectionId
+            != session.connection.connectionId) {
+            session.subscribe(stream);
+        }
+    }
+}
+function streamCreatedHandler(event) {
+    subscribeToStreams(event.streams);
+}
