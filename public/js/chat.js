@@ -45,7 +45,9 @@ query.get(chatID, {
 				//         session.addEventListener("streamCreated",
 				//             streamCreatedHandler);
 				
-			  publisher = TB.initPublisher(apiKey);
+			  publisher = TB.initPublisher(apiKey,
+                                 "video",
+                                 {width:100%, height:100%});
  				
 				session   = TB.initSession(sessionId);
 				console.log(session);
