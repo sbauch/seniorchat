@@ -76,3 +76,13 @@ padding: 1% 6%;
   	firstPic:hover {
 
   	}
+}
+
+}
+
+#video{
+	position:absolute;
+	bottom: 0;
+	right: 0;
+	z-index:1080;
+}
