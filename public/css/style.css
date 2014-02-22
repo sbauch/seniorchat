@@ -86,3 +86,10 @@ padding: 1% 6%;
 	right: 0;
 	z-index:1080;
 }
+
+.chat-button {
+    width:50%;
+    margin-top: 150px;
+    margin: 0 auto;
+}
+
