@@ -82,7 +82,9 @@ query.get(chatID, {
         var stream = streams[i];
         if (stream.connection.connectionId 
                != session.connection.connectionId) {
-            session.subscribe(stream);
+            session.subscribe(stream,
+                                 "partner",
+                                 {width:400, height:225});
         }
     }
   }
