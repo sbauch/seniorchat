@@ -4,6 +4,9 @@
 Parse.initialize("SsKj0DVPOxnQde6rHobJsUH21T2FwzlQbcDkUmGU", "wZ6GNIGQwQ030sGc6maS54fHjagJKAJXbhlxL1am");
 TB.setLogLevel(TB.DEBUG); 
 
+var width  = window.screen.availWidth;
+var height = window.screen.availHeight;
+
 function gup( name ){
     name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
     var regexS = "[\\?&]"+name+"=([^&#]*)";
@@ -47,7 +50,7 @@ query.get(chatID, {
 				
 			  publisher = TB.initPublisher(apiKey,
                                  "video",
-                                 {width:800, height:450});
+                                 {width:400, height:225});
  				
 				session   = TB.initSession(sessionId);
 				console.log(session);
