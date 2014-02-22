@@ -4,8 +4,8 @@
 Parse.initialize("SsKj0DVPOxnQde6rHobJsUH21T2FwzlQbcDkUmGU", "wZ6GNIGQwQ030sGc6maS54fHjagJKAJXbhlxL1am");
 TB.setLogLevel(TB.DEBUG); 
 
-var width  = window.screen.availWidth;
-var height = window.screen.availHeight;
+var mwidth  = window.screen.availWidth;
+var mheight = window.screen.availHeight;
 console.log([width, height]);
 
 function gup( name ){
@@ -85,7 +85,7 @@ query.get(chatID, {
                != session.connection.connectionId) {
             session.subscribe(stream,
                                  "partner",
-                                 {width:width, height:height});
+                                 {width:1280, height:774});
         }
     }
   }
