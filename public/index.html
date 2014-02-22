@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Seniors</title>
+    <script src="http://static.opentok.com/webrtc/v2.0/js/TB.min.js" ></script>
+    <script type="text/javascript">
+        var apiKey    = "44662662";
+        var sessionId = "2_MX40NDY2MjY2Mn5-U2F0IEZlYiAyMiAwOTozNjo1NCBQU1QgMjAxNH4wLjk1NTMzNzM1fg";
+        var token     = "T1==cGFydG5lcl9pZD00NDY2MjY2MiZzZGtfdmVyc2lvbj10YnJ1YnktdGJyYi12MC45MS4yMDExLTAyLTE3JnNpZz0yZmZkOGZkZjdiZjgxM2Q0YTY3YjMyZWMzYTQ5NWEyNDFhOWY3OWQ5OnJvbGU9cHVibGlzaGVyJnNlc3Npb25faWQ9Ml9NWDQwTkRZMk1qWTJNbjUtVTJGMElFWmxZaUF5TWlBd09Ub3pOam8xTkNCUVUxUWdNakF4Tkg0d0xqazFOVE16TnpNMWZnJmNyZWF0ZV90aW1lPTEzOTMwOTA2NTQmbm9uY2U9MC40MDc0NzE4MTIwNjg5OTk2MyZleHBpcmVfdGltZT0xMzkzMTc3MDA2JmNvbm5lY3Rpb25fZGF0YT0=";
+
+        function sessionConnectedHandler (event) {
+            session.publish( publisher );
+            subscribeToStreams(event.streams);
+        }
+        function subscribeToStreams(streams) {
+            for (var i = 0; i < streams.length; i++) {
+                var stream = streams[i];
+                if (stream.connection.connectionId
+                        != session.connection.connectionId) {
+                    session.subscribe(stream);
+                }
+            }
+        }
+        function streamCreatedHandler(event) {
+            subscribeToStreams(event.streams);
+        }
+
+        var publisher = TB.initPublisher(apiKey);
+        var session   = TB.initSession(sessionId);
+
+        session.connect(apiKey, token);
+        session.addEventListener("sessionConnected",
+                sessionConnectedHandler);
+
+        session.addEventListener("streamCreated",
+                streamCreatedHandler);
+    </script>
+
+</head>
+<body>
+<!---->
+<!--secret: a3074606a23948559bf181bb67a96b00b358900d
+
+API Key: 44662662
+
+Token: T1==cGFydG5lcl9pZD00NDY2MjY2MiZzZGtfdmVyc2lvbj10YnJ1YnktdGJyYi12MC45MS4yMDExLTAyLTE3JnNpZz0yZmZkOGZkZjdiZjgxM2Q0YTY3YjMyZWMzYTQ5NWEyNDFhOWY3OWQ5OnJvbGU9cHVibGlzaGVyJnNlc3Npb25faWQ9Ml9NWDQwTkRZMk1qWTJNbjUtVTJGMElFWmxZaUF5TWlBd09Ub3pOam8xTkNCUVUxUWdNakF4Tkg0d0xqazFOVE16TnpNMWZnJmNyZWF0ZV90aW1lPTEzOTMwOTA2NTQmbm9uY2U9MC40MDc0NzE4MTIwNjg5OTk2MyZleHBpcmVfdGltZT0xMzkzMTc3MDA2JmNvbm5lY3Rpb25fZGF0YT0=
+-->
+</body>
+</html>
