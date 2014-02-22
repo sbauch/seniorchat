@@ -36,3 +36,10 @@ div a {
 	text-align: center;
 
 }
+
+#video{
+	position:absolute;
+	bottom: 0;
+	right: 0;
+	
+}
