@@ -2,9 +2,7 @@
  * Created by user on 2/22/14.
  */
 Parse.initialize("SsKj0DVPOxnQde6rHobJsUH21T2FwzlQbcDkUmGU", "wZ6GNIGQwQ030sGc6maS54fHjagJKAJXbhlxL1am");
-
-var apiKey    = "44662662";
-var token     = "T1==cGFydG5lcl9pZD00NDY2MjY2MiZzZGtfdmVyc2lvbj10YnJ1YnktdGJyYi12MC45MS4yMDExLTAyLTE3JnNpZz0yZmZkOGZkZjdiZjgxM2Q0YTY3YjMyZWMzYTQ5NWEyNDFhOWY3OWQ5OnJvbGU9cHVibGlzaGVyJnNlc3Npb25faWQ9Ml9NWDQwTkRZMk1qWTJNbjUtVTJGMElFWmxZaUF5TWlBd09Ub3pOam8xTkNCUVUxUWdNakF4Tkg0d0xqazFOVE16TnpNMWZnJmNyZWF0ZV90aW1lPTEzOTMwOTA2NTQmbm9uY2U9MC40MDc0NzE4MTIwNjg5OTk2MyZleHBpcmVfdGltZT0xMzkzMTc3MDA2JmNvbm5lY3Rpb25fZGF0YT0=";
+TB.setLogLevel(TB.DEBUG); 
 
 function gup( name ){
     name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
@@ -18,27 +16,41 @@ function gup( name ){
 
 
 var chatID = gup('id');
-var session;
+
 var Chat = Parse.Object.extend("Chat");
 var query = new Parse.Query(Chat);
-var sessionId;
+
+	var apiKey    = "44662662";
+	var sessionId; //= "2_MX40NDY2MjY2Mn5-U2F0IEZlYiAyMiAxMjozMzo0MSBQU1QgMjAxNH4wLjY1MTIxNTQzfg";
+	var token     = "T1==cGFydG5lcl9pZD00NDY2MjY2MiZzZGtfdmVyc2lvbj10YnJ1YnktdGJyYi12MC45MS4yMDExLTAyLTE3JnNpZz00N2NiOGY4MGMzMjI2ZWUzYzU0OTY5YmJlMmI5NWVhMDM4YjU3MjJhOnJvbGU9cHVibGlzaGVyJnNlc3Npb25faWQ9Ml9NWDQwTkRZMk1qWTJNbjUtVTJGMElFWmxZaUF5TWlBeE1qb3pNem8wTVNCUVUxUWdNakF4Tkg0d0xqWTFNVEl4TlRRemZnJmNyZWF0ZV90aW1lPTEzOTMxMDEyMzImbm9uY2U9MC4yNzAyODU1OTU1MjczMDU2JmV4cGlyZV90aW1lPTEzOTU2OTMyMTYmY29ubmVjdGlvbl9kYXRhPQ==";
+
 query.get(chatID, {
     success: function(chat) {
         // The object was retrieved successfully.
         console.log(chat.get('sessionId'));
-        // sessionId = chat.get('sessionId');
-				sessionId = '1_MX40NDY2MjY2Mn5-U2F0IEZlYiAyMiAxMjoyNjowOSBQU1QgMjAxNH4wLjMzNDMzOTA4fg'
+        sessionId = chat.get('sessionId');
+				// sessionId = '2_MX40NDY2MjY2Mn5-U2F0IEZlYiAyMiAxMjozMToxOCBQU1QgMjAxNH4wLjk3NDM5MzA3fg'
 				console.log(sessionId);
         
-				session = TB.initSession(sessionId);
-
-        session.connect(apiKey, token);
-
-        session.addEventListener("sessionConnected",
-            sessionConnectedHandler);
-
-        session.addEventListener("streamCreated",
-            streamCreatedHandler);
+				// session = TB.initSession(sessionId);
+				// 
+				//         session.connect(apiKey, token);
+				// 
+				//         session.addEventListener("sessionConnected",
+				//             sessionConnectedHandler);
+				// 
+				//         session.addEventListener("streamCreated",
+				//             streamCreatedHandler);
+				
+				  var publisher = TB.initPublisher(apiKey);
+  				var session   = TB.initSession(sessionId);
+ 
+  				session.connect(apiKey, token);
+  				session.addEventListener("sessionConnected", 
+                           sessionConnectedHandler);
+ 
+  				session.addEventListener("streamCreated", 
+                           streamCreatedHandler);
 
 
 
@@ -49,19 +61,25 @@ query.get(chatID, {
     }
 });
 
-function sessionConnectedHandler (event) {
-    session.publish( publisher );
-    subscribeToStreams(event.streams);
-}
-function subscribeToStreams(streams) {
+
+	
+ 
+  function sessionConnectedHandler (event) {
+     session.publish( publisher );
+     subscribeToStreams(event.streams);
+  }
+  function subscribeToStreams(streams) {
     for (var i = 0; i < streams.length; i++) {
         var stream = streams[i];
-        if (stream.connection.connectionId
-            != session.connection.connectionId) {
+        if (stream.connection.connectionId 
+               != session.connection.connectionId) {
             session.subscribe(stream);
         }
     }
-}
-function streamCreatedHandler(event) {
+  }
+  function streamCreatedHandler(event) {
     subscribeToStreams(event.streams);
-}
+  }
+ 
+
+
