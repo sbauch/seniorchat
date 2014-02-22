@@ -6,7 +6,6 @@ TB.setLogLevel(TB.DEBUG);
 
 var mwidth  = window.screen.availWidth;
 var mheight = window.screen.availHeight;
-console.log([width, height]);
 
 function gup( name ){
     name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
