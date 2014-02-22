@@ -91,7 +91,7 @@ padding: 1% 6%;
     width:400px;
     height: 50px;
     margin-left:419px;
-    margin-top: 125px;
+    margin-top: 75px;
     font-size: 30px;
 
 }
@@ -99,5 +99,6 @@ padding: 1% 6%;
 #logo {
     color:white;
     font-size: 50px;
+    font-family: 'Raleway', sans-serif;
 }
 
