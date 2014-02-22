@@ -84,7 +84,7 @@ query.get(chatID, {
                != session.connection.connectionId) {
             session.subscribe(stream,
                                  "partner",
-                                 {width:400, height:225});
+                                 {width:width, height:height});
         }
     }
   }
