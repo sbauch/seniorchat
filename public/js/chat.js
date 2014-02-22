@@ -4,8 +4,8 @@
 Parse.initialize("SsKj0DVPOxnQde6rHobJsUH21T2FwzlQbcDkUmGU", "wZ6GNIGQwQ030sGc6maS54fHjagJKAJXbhlxL1am");
 TB.setLogLevel(TB.DEBUG); 
 
-var mwidth  = window.screen.availWidth;
-var mheight = window.screen.availHeight;
+var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
+var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
 
 function gup( name ){
     name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
@@ -84,7 +84,7 @@ query.get(chatID, {
                != session.connection.connectionId) {
             session.subscribe(stream,
                                  "partner",
-                                 {width:1280, height:774});
+                                 {width:w, height:h});
         }
     }
   }
