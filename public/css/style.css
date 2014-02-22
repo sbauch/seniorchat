@@ -1,5 +1,5 @@
 body {
-	background-color: #2ecc71;
+	background-color: #3498db;
 }
 
 .btn-custom {
@@ -19,7 +19,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-  .btn {
+  .login-btn {
   	width: 20vw;
   	height: 20vh;
   	background-color: #f1c40f;
@@ -88,8 +88,16 @@ padding: 1% 6%;
 }
 
 .chat-button {
-    width:50%;
-    margin-top: 150px;
-    margin: 0 auto;
+    width:400px;
+    height: 50px;
+    margin-left:419px;
+    margin-top: 125px;
+    font-size: 30px;
+
+}
+
+#logo {
+    color:white;
+    font-size: 50px;
 }
 
