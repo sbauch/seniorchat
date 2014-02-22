@@ -28,7 +28,7 @@ map "/new_chat" do
 }
 end
 
-map "/chat" do
+map "/chat?id=#{chat_id}" do
   run lambda { |env|
   [
     200, 
