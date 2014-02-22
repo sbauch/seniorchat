@@ -11,7 +11,7 @@ function startNewChat(){
         success: function(chat) {
             // Execute any logic that should take place after the object is saved.
 //            alert('New object created with objectId: ' + chat.id);
-            window.location.href = "chat.html?id=" + chat.id;
+            window.location.href = "chat?id=" + chat.id;
         },
         error: function(chat, error) {
             // Execute any logic that should take place if the save fails.
