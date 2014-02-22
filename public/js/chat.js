@@ -50,7 +50,7 @@ query.get(chatID, {
 				
 			  publisher = TB.initPublisher(apiKey,
                                  "video",
-                                 {width:400, height:225});
+                                 {width:320, height:180});
  				
 				session   = TB.initSession(sessionId);
 				console.log(session);
