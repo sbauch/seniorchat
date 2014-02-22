@@ -41,9 +41,9 @@ query.get(chatID, {
     success: function(chat) {
         // The object was retrieved successfully.
         console.log(chat.get('sessionId'));
-        sessionId = chat.get('sessionId');
-
-
+        // sessionId = chat.get('sessionId');
+				sessionId = '1_MX40NDY2MjY2Mn5-U2F0IEZlYiAyMiAxMjoyNjowOSBQU1QgMjAxNH4wLjMzNDMzOTA4fg'
+				console.log(sessionId);
         session = TB.initSession(sessionId);
 
         session.connect(apiKey, token);
