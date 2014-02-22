@@ -1,0 +1,128 @@
+body {
+	background-color: #2ecc71;
+}
+/*
+.btn-custom {
+  background-color: hsl(189, 100%, 43%) !important;
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#3498db", endColorstr="#3498db");
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#3498db), to(#3498db));
+  background-image: -moz-linear-gradient(top, #3498db, #3498db);
+  background-image: -ms-linear-gradient(top, #3498db, #3498db);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #3498db), color-stop(100%, #3498db));
+  background-image: -webkit-linear-gradient(top, #3498db, #3498db);
+  background-image: -o-linear-gradient(top, #3498db, #3498db);
+  background-image: linear-gradient(#3498db, #3498db);
+  border-color: #3498db #3498db hsl(189, 100%, 43%);
+  color: #fff !important;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.00);
+  -webkit-font-smoothing: antialiased;
+}
+
+  .btn {
+  	width: 20vw;
+  	height: 20vh;
+  	background-color: #f1c40f;
+  	margin-bottom: 5%;
+  	font-size: 250%;
+  	margin-left: 40vw;
+  	text-align: center;
+  	vertical-align: middle;
+  	margin-top: 10vh;
+  	padding-top: 3%;
+  	padding-right: 2%;}
+
+  	p {
+  		font-size: 250%;
+  		margin-top: 20vh;
+  		text-align: center;
+  		font-family: Raleway; 
+  		padding: 3%;
+  		background-color: #3498db;
+  		display: inline-block;
+  		margin-left: 35vw;
+  		border-radius: 5%;
+  	}
+
+  	input {
+  		width: 100%;
+  	}
+
+  	#regsuccess {
+
+  		margin-left: 40vw;
+padding: 1% 6%;
+  	}
+  	#imageslider img {
+  		
+  		background-color: #bdc3c7;
+  		padding: 1%;
+      width:40%;
+      height:95%;
+      display: inline-block;
+      float: left;
+
+  	}
+  	#imageslider {
+/*  		margin-right: 50%;*/
+/*
+  	}
+  	.before {
+  		margin-right: 30%;
+  	}
+  	.after {
+  		margin-right: 20%;
+  	}
+  	
+    #registration {
+      width: 100%;
+      height:50%;
+    }
+  	
+    a {
+
+      margin-top: 0;
+    }
+*/ /*
+    div#image {
+   content:url(images/sunrise.jpg);
+   width:500px;
+}​
+
+div#image2 {
+   content:url(images/mountains.jpg);
+   width:500px;
+}​
+
+#parent {
+    width: 300px;
+}
+
+#image {
+    float: left;
+    width: 100px;
+    height: 100px;
+}
+
+#image2 {
+    float: left;
+    width: 100px;
+    height: 100px;
+}
+
+.images {
+    float: left;
+    width: 100px;
+    height: 100px;
+}
+*/
+
+#parent {
+    width: 300px;
+}
+
+.image {
+    float: left;
+    width: 100px;
+    height: 100px;
+}
